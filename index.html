@@ -1,49 +1,232 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/custom.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <script src="./plugin/highlight/highlight.js"></script>
 
-		<script src="js/reveal.js"></script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section class="cover">
+            <h2>CSS</h2>
+        </section>
+        <section class="flexbox-overall">
+            <section class="section-title">
+                <h2>Flexbox</h2>
+            </section>
+            <section class="section-content">
+                <img loading="lazy" src="./resource/flexbox-overall.svg"
+                     alt="A diagram explaining flexbox terminology.">
+            </section>
+            <section class="section-content">
+                <img loading="lazy" src="./resource/flexbox-overall-axis.svg"
+                     alt="A diagram explaining flexbox terminology.">
+            </section>
+        </section>
+		<section class="flexbox-concept">
+			<section class="section-title">
+				<h2>零星小点</h2>
+			</section>
+			<section class="section-title">
+				<h6>盒模型</h6>
+			</section>
+			<section class="section-title">
+				<h6>定位</h6>
+			</section>
+			<section class="section-content">
+				<h6>长度单位</h6>
+				<p>px: 一个像素</p>
+				<p>em： 1em=1font-size, 如果em用在的font-size上，则相对于父元素的字号计算</p>
+				<p>rem: 根据root元素计算</p>
+			</section>
+		</section>
+        <section class="flexbox-container-attr">
+            <section class="section-content">
+                <h4>父容器上的属性</h4>
+            </section>
+            <section class="section-content">
+						<pre><code class="css">.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}</code></pre>
+                <img loading="lazy" src="./resource/flex-direction.svg" alt="A diagram explaining flexbox terminology.">
+            </section>
+            <section class="section-content">
+						<pre><code class="css">.container{
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+nowrap: default 不换行
+wrap: 当一行放不下的时候，按照main axis方向自动换行
+wrap-reverse: 当一行放不下的时候，按照与main axis相反的方向自动换行
+						</code></pre>
+                <img loading="lazy" src="./resource/flex-wrap.svg" alt="A diagram explaining flexbox terminology.">
+            </section>
+            <section class="section-content">
+						<pre><code class="css">.container { justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe; }
+.container { align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe; }
+						</code></pre>
+                <img loading="lazy" src="./resource/justify-content-align-items.svg"
+                     alt="A diagram explaining flexbox terminology.">
+            </section>
+            <section class="section-content">
+						<pre><code class="css">.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+}
+						</code></pre>
+                <img loading="lazy" src="./resource/align-content.svg" alt="A diagram explaining flexbox terminology.">
+            </section>
+        </section>
+        <section class="flexbox-items-attr">
+            <section class="section-content">
+                <h4>item上的属性</h4>
+            </section>
+            <section class="section-content">
+					<pre><code class="css">.item {
+  order: Integer; /* default is 0 */
+}</code></pre>
+                <img loading="lazy" src="./resource/order.svg" alt="A diagram explaining flexbox terminology."/>
+            </section>
+            <section class="section-content">
+                <h6>flex-basis <i>VS</i> flex-grow <i>VS</i> flex-shrink</h6>
+                <p><strong>flex-basis:</strong>在剩余空间被分配前，元素的尺寸</p>
+                <p><strong>flex-grow:</strong>存在剩余空间时，剩余空间如何被分配</p>
+                <p><strong>flex-shrink:</strong>当空间不够时，如何压缩元素</p>
+            </section>
+            <section class="section-content">
+                <img loading="lazy" src="./resource/extra-space.svg" alt="A diagram explaining flexbox terminology."/>
+            </section>
+            <section class="section-content">
+                <h6>flex-basis</h6>
+                <p>auto: 我内容有多大我就占多大剩余空间</p>
+                <p>0: 不管我有多大，你计算剩余空间的时候都不用考虑我的尺寸</p>
+            </section>
+            <section class="section-content">
+                <h6>question</h6>
+                <p>0 与 auto的结果有什么不一样？</p>
+                <img loading="lazy" src="./resource/flex-basis-question.svg"
+                     alt="A diagram explaining flexbox terminology."/>
+            </section>
+            <section class="section-content">
+                <p>0 VS auto</p>
+                <img loading="lazy" src="./resource/flex-basis-example.svg"
+                     alt="A diagram explaining flexbox terminology."/>
+            </section>
+            <section class="section-content">
+                <p>参考代码</p>
+                <pre><code class="html"><div class="container">
+	<div class="item blue">short</div>
+	<div class="item green">short</div>
+	<div class="item orange">short</div>
+	<div class="item pink">loo oooooo oooo ooo oooo oog</div>
+</div></code></pre>
+                <pre><code class="css">.container {
+  display: flex;
+  height: 120px;
+  width: 300px;
+  border: solid 1px gray;
+  align-items: center;
+}
+.item {
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+  height: 50px;
+  flex: 1 1;
+  flex-basis: auto
+;
+}
+.blue {
+  background: blue;
+}
+.green {
+  background: green;
+}
+.orange {
+  background: orange;
+}
+.pink {
+  background: pink;
+}
+</code></pre>
+            </section>
+            <section class="section-content">
+                <h6>flex-grow</h6>
+                <p>默认值为0，不grow</p>
+            </section>
+			<section class="section-content">
+				<h6>question</h6>
+				<p>grow 设为1，每个item的宽度是多少呢？</p>
+				<img loading="lazy" src="./resource/flex-grow-question.svg" alt="A diagram explaining flexbox terminology."/>
+			</section>
+			<section class="section-content">
+				<img loading="lazy" src="./resource/flex-grow-anwser.svg" alt="A diagram explaining flexbox terminology."/>
+			</section>
+            <section class="section-content">
+                <h6>flex-shrink</h6>
+                <p>默认值为1，shrink</p>
+            </section>
+			<section class="section-content">
+				<h6>question</h6>
+				<p>每个item的宽度是多少呢？</p>
+				<img loading="lazy" src="./resource/flex-shrink-question.svg" alt="A diagram explaining flexbox terminology."/>
+			</section>
+			<section class="section-content">
+				<img loading="lazy" src="./resource/flex-shrink-answer.svg" alt="A diagram explaining flexbox terminology."/>
+			</section>
+            <section class="section-content">
+                <p>Question?</p>
+                <img loading="lazy" src="./resource/question1.svg" alt="A diagram explaining flexbox terminology."/>
+            </section>
+			<section class="section-content">
+				<img loading="lazy" src="./resource/answer1.svg" alt="A diagram explaining flexbox terminology."/>
+			</section>
+        </section>
+        </section>
+        <section class="section-content">
+            <img loading="lazy" src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg"
+                 alt="A diagram explaining flexbox terminology.">
+        </section>
+        <section class="section-content">
+            <h6>reference</h6>
+            <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox 属性</a></p>
+            <p><a href="https://cssreference.io/property/align-content/">可视化帮助理解呦</a></p>
+            <p><a href="https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/">play game!</a>
+            </p>
+        </section>
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      {src: 'plugin/markdown/marked.js'},
+      {src: 'plugin/markdown/markdown.js'},
+      {src: 'plugin/notes/notes.js', async: true},
+      {src: 'plugin/highlight/highlight.js', async: true}
+    ]
+  });
+</script>
+</body>
 </html>
