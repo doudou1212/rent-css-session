@@ -35,44 +35,63 @@
           <h2>行内元素和块级元素</h2>
         </section>
         <section class="section-content">
-          <p>块级元素</p>
+          <p>
+            <a href="./resource/html-element/demo/html-block-demo.html" target="_blank">块级元素</a>
+          </p>
           <img loading="lazy" src="./resource/html-element/block-element.png"
             alt="A diagram explaining html block element list.">
         </section>
         <section class="section-content">
-          <p>内联元素</p>
+          <p>
+              <a href="./resource/html-element/demo/html-inline-demo.html" target="_blank">内联元素</a>
+          </p>
           <img loading="lazy" src="./resource/html-element/inline-element.png"
             alt="A diagram explaining html inline element list.">
-          <p><a href="./resource/html-element/demo/html-inline-demo.html" target="_blank" style="float: right;padding-top:50px;">Demo</a></p>
         </section>
         <section class="section-content">
           <section class="section-content">
             <p>块级元素与内联元素相互转化</p>
-            <p>块级元素 -> 内联元素：　display:inline;</p>
-            <p>内联元素 -> 块级元素：　display:block;</p>
-            <p>
-              <a href="./resource/html-element/demo/html-inline-to-block-demo.html" target="_blank" style="float: right;padding-top:50px;">Demo2</a>
-              <a href="./resource/html-element/demo/html-inline-add-padding-demo.html" target="_blank" style="float: right;padding-top:50px;">  Demo1</a>
-            </p>
+            <div style="text-align:left">
+              <p>块级元素 -> 内联元素：　display:inline;</p>
+              <p>
+                <a href="./resource/html-element/demo/html-inline-add-padding-demo.html" target="_blank">内联元素</a>
+                  -> 块级元素：　
+                  <a href="./resource/html-element/demo/html-inline-to-block-demo.html" target="_blank">display:block</a>
+                  |
+                  <a href="./resource/html-element/demo/html-inline-to-inline-block-demo.html" target="_blank">inline-block</a>;
+              </p>
+            </div>
           </section>
         </section>
       </section>
 
       <section class="html-element-overall">
           <section class="section-title">
-            <h2>CSS盒模型</h2>
+            <h2>盒模型BOX-MODEL</h2>
           </section>
           <section class="section-title">
-            <p style="text-align:left">盒模型又称框模型（Box Model）,包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。</p>
+            <h3 style="text-align:left">盒模型</h3>
+            <div style="text-align:left">
+              <ul>
+                <li>元素内容（content)</li>
+                <li>内边距（padding）</li>
+                <li>边框（border）</li>
+                <li>外边距（margin）</li>
+              </ul>
+            </div>
           </section>
           <section class="section-content">
+            <h3>盒模型</h3>
               <img loading="lazy" src="./resource/box-model/box-model.png" height=500px
               alt="A diagram explaining css box model.">
           </section>
           <section class="section-content">
-              <h3>标准模型+IE模型</h3>
-              <p style="text-align:left">通过css3新增的属性 box-sizing: content-box | border-box, 分别设置盒模型为标准模型（content-box）和IE模型（border-box）。</p>
-              <p style="text-align:left">两者区别：width和height计算方式的不同</p>
+            <h3 style="text-align:left">盒模型</h3>
+            <div style="text-align:left">
+              <p >通过css3新增的属性 box-sizing</p>
+              <p>设置盒模型为标准模型（content-box）和IE模型（border-box）</p>
+              <p>两者区别：width和height计算方式的不同</p>
+            </div>
           </section>
           <section class="section-content">
               <h3>标准模型(content-box)</h3>
@@ -92,47 +111,205 @@
               <p style="text-align:left">BFC决定了元素如何对其内容进行定位，以及与其兄弟元素之间的相互作用。</p>
           </section>
           <section class="section-content">
-              <h3 style="text-align:left">BFC的原理（渲染规则)</h3>
-              <p style="text-align:left"> BFC元素是一个独立的容器，外面的元素不会影响里面的元素,里面的元素也不会影响外面的元素.</p>
-              <nl style="text-align:left">
+            <h3 style="text-align:left">BFC的原理（渲染规则)</h3>
+            <div style="text-align:left font-size: 35px;">
+              <p> BFC元素是一个独立的容器，外面的元素不会影响里面的元素,里面的元素也不会影响外面的元素.</p>
+              <ul>
                 <li>BFC元素内垂直方向的margin会发生重叠</li>
                 <li>不同BFC的margin不会发生重叠
-                  <nl>
+                  <ul>
                     <li>阻止兄弟关系外边距折叠
                       <a href="./resource/box-model/demo/BFC_nonBFC-flod-adjacent-margin-demo.html" target="_blank">Before</a>
-                      <a href="./resource/box-model/demo/BFC_BFC-unflod-adjacent-margin-demo.html" target="_blank">   After</a>
+                      <a href="./resource/box-model/demo/BFC_BFC-unflod-adjacent-margin-demo.html" target="_blank">|After</a>
                     </li>
                     </li>阻止祖先关系外边距折叠
                       <a href="./resource/box-model/demo/BFC_nonBFC-flod-parent-or-child-margin-demo.html" target="_blank">Before</a>
-                      <a href="./resource/box-model/demo/BFC_BFC-unflod-parent-and-child-margin-demo.html" target="_blank">  After</a>
+                      <a href="./resource/box-model/demo/BFC_BFC-unflod-parent-and-child-margin-demo.html" target="_blank">|After</a>
                     </li>
-                  </nl>
+                  </ul>
                 </li>
                 <li>BFC可以包含浮动元素
                   <a href="./resource/box-model/demo/BFC_nonBFC-nonContain-float-element-demo.html" target="_blank">Before</a>
-                  <a href="./resource/box-model/demo/BFC_BFC-contain-float-element-demo.html" target="_blank">  After</a>
+                  <a href="./resource/box-model/demo/BFC_BFC-contain-float-element-demo.html" target="_blank">|After</a>
                 </li>
                 <li>BFC的区域不会与浮动元素的布局重叠。
                     <a href="#" target="_blank">Before</a>
-                    <a href="#" target="_blank">  After</a>
+                    <a href="#" target="_blank">|After</a>
                 </li>
-              </nl>
+              </ul>
+            </div>
           </section>
           <section class="section-content">
               <h3 style="text-align:left">如何创建BFC</h3>
-              <nl style="text-align:left">
+              <ul style="text-align:left">
                 <li>html根元素；</li>
                 <li>float的值不为none；</li>
                 <li>position的值不为static或relative；</li>
                 <li>overflow不为visible, 即为auto、scroll或者hidden</li>
                 <li>display属性为inline-blocks,table,table-cell,table-caption,flex,inline-flex;</li>
-              </nl>
+              </ul>
           </section>
       </section>
       <section class="html-element-overall">
         <section class="section-title">
           <h2>定位Position</h2>
         </section>
+        <section class="section-content">
+          <h3 style="text-align:left">position属性</h4>
+          <div style="text-align:left">
+            <ul>
+              <li>用来指定一个元素在网页上的位置</li>
+              <li>属性值： static | relative | fixed | absolute | sticky</li>
+            </ul>
+          </div>
+          
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">
+            <a href="./resource/position/demo/position-static.html" target="_blank">static</a>
+          </h3>
+          <div style="text-align:left">
+            <ul>
+              <li>position属性的默认值</li>
+              <li>由浏览器决定每个元素的位置</li>
+              <li>符合"正常的页面流"（normal flow）</li>
+              <li>top、bottom、left、right这四个属性无效</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left"> relative | fixed | absolute</h3>
+          <div>
+            <ul>
+              <li>根据参考物来来指定偏移的方向和距离</li>
+              <li>必须搭配top、bottom、left、right这四个属性一起使用</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">
+            <a href="./resource/position/demo/position-relative.html" target="_blank">relative</a>
+          </h3>
+          <div style="text-align:left">
+            <ul>
+              <li>偏移参考物：相对于默认位置（即static时的位置）</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">
+            <a href="./resource/position/demo/position-absolute.html" target="_blank">absolute</a>
+          </h3>
+          <div style="text-align:left">
+            <ul>
+              <li>偏移参考物：父元素</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">
+            <a href="./resource/position/demo/position-fixed.html" target="_blank">fixed</a>
+          </h3>
+          <div style="text-align:left">
+            <ul>
+              <li>偏移参考物：浏览器窗口</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">
+            <a href="./resource/position/demo/position-sticky.html" target="_blank">sticky</a>
+          </h3>
+          <div style="text-align:left">
+            <ul>
+              <li>它能够形成"动态固定"的效果</li>
+              <li>必须搭配top、bottom、left、right这四个属性一起使用，不能省略, 否则没有动态效果</li>
+              <li>Safari 浏览器需要加上浏览器前缀-webkit-</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <section class="html-element-overall">
+        <section class="section-title">
+          <h2>浮动float</h2>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">标准流排列</h3>
+          <div style="text-align:left">
+            <p>
+              例如: 
+              <a href="./resource/float/demo/float-div-normal.html" target="_blank">div元素，独占一行</a>
+            </p>
+          </div>
+          
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">float</h3>
+          <div style="text-align:left">
+            <ul>
+              <li>属性值： left | right </li>
+              <li>
+                浮动可以理解为让元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次
+                <a href="./resource/float/demo/float-div-float-left-demo1.html" target="_blank">Demo1</a>
+                <a href="./resource/float/demo/float-div-float-left-demo2.html" target="_blank">  | Demo2</a>
+              </li>
+              <li>
+                <a href="./resource/float/demo/float-div-float-left-vs-right-demo.html" target="_blank">左浮动 vs 右浮动</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">clear</h3>
+          <div style="text-align:left">
+            <ul >
+              <li>清除浮动</li>
+              <li>属性值： none | 
+                <a href="./resource/float/demo/clear-float-left.html" target="_blank">left</a> |
+                <a href="./resource/float/demo/clear-float-right.html" target="_blank">right</a>| both </li>
+              </li>
+            </ul>
+          </div>
+          
+        </section>
+        <section class="section-content">
+          <h3 style="text-align:left">float引起的问题</h3>
+          <div style="text-align:left">
+            <p >
+              <a href="./resource/box-model/demo/BFC_nonBFC-nonContain-float-element-demo.html" target="_blank">高度塌陷</a>
+            </p>
+            <ul>
+              <li>
+                <a href="./resource/box-model/demo/BFC_BFC-contain-float-element-demo.html" target="_blank">解决：BFC</a>
+              </li>
+            </ul>
+          </div>
+            
+        </section>
+
+        <section class="section-content">
+          <h3 style="text-align:left">float与流体布局</h3>
+          <div style="text-align:left">
+            <ul>
+              <li>
+                <a href="./resource/float/demo/float-text-wrapping.html" target="_blank">
+                  文字环绕(不需要float？？？)
+                </a>
+              </li>
+              <li>
+                <a href="./resource/float/demo/float-image-left-text-right.html" target="_blank">
+                  文字环绕变身-单侧固定 (float & flex 混用 ？)
+                </a>
+              </li>
+              <li>
+                <a href="./resource/float/demo/float-text-left-center-right.html" target="_blank">
+                  文字环绕变身-中间内容居中，左中右布局
+                </a>
+              </li>
+            </ul>
+          </div>
+          </section>
       </section>
         
       <section class="flexbox-overall">
