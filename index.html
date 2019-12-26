@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -23,49 +23,64 @@
       link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName('head')[0].appendChild(link);
     </script>
-</head>
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section class="cover">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section class="cover">
           <h2>CSS</h2>
-      </section>
-      <section class="html-element-overall">
-        <section class="section-title">
-          <h2>行内元素和块级元素</h2>
         </section>
-        <section class="section-content">
-          <p>
-            <a href="./resource/html-element/demo/html-block-demo.html" target="_blank">块级元素</a>
-          </p>
-          <img loading="lazy" src="./resource/html-element/block-element.png"
-            alt="A diagram explaining html block element list.">
+        <section class="html-element-overall">
+            <section class="section-title">
+              <h3 style="text-align:left">Agenda</h3>
+              <div style="text-align:left">
+                <p>元素定位： NORMAL, POSITION, FLOAT</p>
+                <p>CSS布局： FLEXBOX</p>
+              </div>
+            </section>
         </section>
-        <section class="section-content">
-          <p>
-              <a href="./resource/html-element/demo/html-inline-demo.html" target="_blank">内联元素</a>
-          </p>
-          <img loading="lazy" src="./resource/html-element/inline-element.png"
-            alt="A diagram explaining html inline element list.">
-        </section>
-        <section class="section-content">
+        <section class="html-element-overall">
+          <section class="section-title">
+            <h2>块级元素和行内元素</h2>
+          </section>
           <section class="section-content">
-            <p>块级元素与内联元素相互转化</p>
-            <div style="text-align:left">
-              <p>块级元素 -> 内联元素：　display:inline;</p>
-              <p>
-                <a href="./resource/html-element/demo/html-inline-add-padding-demo.html" target="_blank">内联元素</a>
-                  -> 块级元素：　
-                  <a href="./resource/html-element/demo/html-inline-to-block-demo.html" target="_blank">display:block</a>
-                  |
-                  <a href="./resource/html-element/demo/html-inline-to-inline-block-demo.html" target="_blank">inline-block</a>;
-              </p>
-            </div>
+            <p>
+              <a href="./resource/html-element/demo/html-block-demo.html" target="_blank">块级元素Block</a>
+            </p>
+            <p style="text-align:left">在formal flow中， Block元素默认情况下独占一行， 可设置width和height</p>
+            <img loading="lazy" src="./resource/html-element/block-element.png"
+              alt="A diagram explaining html block element list.">
+            <p style="text-align:left">垂直方向margin重叠： 
+              <a href="./resource/box-model/demo/BFC_nonBFC-flod-adjacent-margin-demo.html" target="_blank">Demo1</a>|
+              <a href="./resource/box-model/demo/BFC_nonBFC-flod-parent-or-child-margin-demo.html" target="_blank">Demo2</a>
+            </p>
+          </section>
+          <section class="section-content">
+            <p>
+                <a href="./resource/html-element/demo/html-inline-demo.html" target="_blank">行内元素Inline</a>
+            </p>
+            <p style="text-align:left">在formal flow中， Inline元素， 不独占一行， 可以与其他元素在同一行， 不可设置width、height、margin-top、margin-bottom等</p>
+            <img loading="lazy" src="./resource/html-element/inline-element.png"
+              alt="A diagram explaining html inline element list.">
+          </section>
+          <section class="section-content">
+            <section class="section-content">
+              <p>块级元素与行内元素， 在Display可以相互转化</p>
+              <div style="text-align:left">
+                <p>块级元素 -> 行内元素：　display:inline;</p>
+                <p>
+                  <a href="./resource/html-element/demo/html-inline-add-padding-demo.html" target="_blank">行内元素</a>
+                    -> 块级元素：　
+                    <a href="./resource/html-element/demo/html-inline-to-block-demo.html" target="_blank">display:block</a>
+                    |
+                    <a href="./resource/html-element/demo/html-inline-to-inline-block-demo.html" target="_blank">inline-block</a>;
+                </p>
+              </div>
+            </section>
           </section>
         </section>
-      </section>
 
-      <section class="html-element-overall">
+        <section class="html-element-overall">
           <section class="section-title">
             <h2>盒模型BOX-MODEL</h2>
           </section>
@@ -86,7 +101,8 @@
               alt="A diagram explaining css box model.">
           </section>
           <section class="section-content">
-            <h3 style="text-align:left">盒模型</h3>
+            <h3 style="text-align:left">
+              <a href="./resource/box-model/demo/box-sizing-demo.html" target="_blank">盒模型</a></h3>
             <div style="text-align:left">
               <p >通过css3新增的属性 box-sizing</p>
               <p>设置盒模型为标准模型（content-box）和IE模型（border-box）</p>
@@ -94,25 +110,25 @@
             </div>
           </section>
           <section class="section-content">
-              <h3>标准模型(content-box)</h3>
-              <img loading="lazy" src="./resource/box-model/content-box.png" height=500px
-              alt="A diagram explaining css box model.">
+            <h3>标准模型(content-box)</h3>
+            <img loading="lazy" src="./resource/box-model/content-box.png" height=500px
+            alt="A diagram explaining css box model.">
           </section>
           <section class="section-content">
-              <h3>IE模型(border-box)</h3>
-              <img loading="lazy" src="./resource/box-model/border-box.png" height=500px
-              alt="A diagram explaining css box model.">
+            <h3>IE模型(border-box)</h3>
+            <img loading="lazy" src="./resource/box-model/border-box.png" height=500px
+            alt="A diagram explaining css box model.">
           </section>
           <section class="section-content">
-              <h3>BFC - Block Formatting Context</h3>
-              <h3>块级格式化上下文</h3>
+            <h3>BFC - Block Formatting Context</h3>
+            <h3>块级格式化上下文</h3>
           </section>
           <section class="section-content">
-              <p style="text-align:left">BFC决定了元素如何对其内容进行定位，以及与其兄弟元素之间的相互作用。</p>
+            <p style="text-align:left">BFC决定了元素如何对其内容进行定位，以及与其兄弟元素之间的相互作用。</p>
           </section>
           <section class="section-content">
             <h3 style="text-align:left">BFC的原理（渲染规则)</h3>
-            <div style="text-align:left font-size: 35px;">
+            <div style="text-align:left; font-size: 35px;">
               <p> BFC元素是一个独立的容器，外面的元素不会影响里面的元素,里面的元素也不会影响外面的元素.</p>
               <ul>
                 <li>BFC元素内垂直方向的margin会发生重叠</li>
@@ -132,9 +148,7 @@
                   <a href="./resource/box-model/demo/BFC_nonBFC-nonContain-float-element-demo.html" target="_blank">Before</a>
                   <a href="./resource/box-model/demo/BFC_BFC-contain-float-element-demo.html" target="_blank">|After</a>
                 </li>
-                <li>BFC的区域不会与浮动元素的布局重叠。
-                    <a href="#" target="_blank">Before</a>
-                    <a href="#" target="_blank">|After</a>
+                <li><a href="./resource/float/demo/float-div-float-left-BFC.html" target="_blank">BFC的区域不会与float box重叠</a>
                 </li>
               </ul>
             </div>
@@ -149,194 +163,187 @@
                 <li>display属性为inline-blocks,table,table-cell,table-caption,flex,inline-flex;</li>
               </ul>
           </section>
-      </section>
-      <section class="html-element-overall">
-        <section class="section-title">
-          <h2>定位Position</h2>
         </section>
-        <section class="section-content">
-          <h3 style="text-align:left">position属性</h4>
-          <div style="text-align:left">
-            <ul>
-              <li>用来指定一个元素在网页上的位置</li>
-              <li>属性值： static | relative | fixed | absolute | sticky</li>
-            </ul>
-          </div>
-          
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">
-            <a href="./resource/position/demo/position-static.html" target="_blank">static</a>
-          </h3>
-          <div style="text-align:left">
-            <ul>
-              <li>position属性的默认值</li>
-              <li>由浏览器决定每个元素的位置</li>
-              <li>符合"正常的页面流"（normal flow）</li>
-              <li>top、bottom、left、right这四个属性无效</li>
-            </ul>
-          </div>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left"> relative | fixed | absolute</h3>
-          <div>
-            <ul>
-              <li>根据参考物来来指定偏移的方向和距离</li>
-              <li>必须搭配top、bottom、left、right这四个属性一起使用</li>
-            </ul>
-          </div>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">
-            <a href="./resource/position/demo/position-relative.html" target="_blank">relative</a>
-          </h3>
-          <div style="text-align:left">
-            <ul>
-              <li>偏移参考物：相对于默认位置（即static时的位置）</li>
-            </ul>
-          </div>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">
-            <a href="./resource/position/demo/position-absolute.html" target="_blank">absolute</a>
-          </h3>
-          <div style="text-align:left">
-            <ul>
-              <li>偏移参考物：父元素</li>
-            </ul>
-          </div>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">
-            <a href="./resource/position/demo/position-fixed.html" target="_blank">fixed</a>
-          </h3>
-          <div style="text-align:left">
-            <ul>
-              <li>偏移参考物：浏览器窗口</li>
-            </ul>
-          </div>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">
-            <a href="./resource/position/demo/position-sticky.html" target="_blank">sticky</a>
-          </h3>
-          <div style="text-align:left">
-            <ul>
-              <li>它能够形成"动态固定"的效果</li>
-              <li>必须搭配top、bottom、left、right这四个属性一起使用，不能省略, 否则没有动态效果</li>
-              <li>Safari 浏览器需要加上浏览器前缀-webkit-</li>
-            </ul>
-          </div>
-        </section>
-      </section>
-
-      <section class="html-element-overall">
-        <section class="section-title">
-          <h2>浮动float</h2>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">标准流排列</h3>
-          <div style="text-align:left">
-            <p>
-              例如: 
-              <a href="./resource/float/demo/float-div-normal.html" target="_blank">div元素，独占一行</a>
-            </p>
-          </div>
-          
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">float</h3>
-          <div style="text-align:left">
-            <ul>
-              <li>属性值： left | right </li>
-              <li>
-                浮动可以理解为让元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次
-                <a href="./resource/float/demo/float-div-float-left-demo1.html" target="_blank">Demo1</a>
-                <a href="./resource/float/demo/float-div-float-left-demo2.html" target="_blank">  | Demo2</a>
-              </li>
-              <li>
-                <a href="./resource/float/demo/float-div-float-left-vs-right-demo.html" target="_blank">左浮动 vs 右浮动</a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">clear</h3>
-          <div style="text-align:left">
-            <ul >
-              <li>清除浮动</li>
-              <li>属性值： none | 
-                <a href="./resource/float/demo/clear-float-left.html" target="_blank">left</a> |
-                <a href="./resource/float/demo/clear-float-right.html" target="_blank">right</a>| both </li>
-              </li>
-            </ul>
-          </div>
-          
-        </section>
-        <section class="section-content">
-          <h3 style="text-align:left">float引起的问题</h3>
-          <div style="text-align:left">
-            <p >
-              <a href="./resource/box-model/demo/BFC_nonBFC-nonContain-float-element-demo.html" target="_blank">高度塌陷</a>
-            </p>
-            <ul>
-              <li>
-                <a href="./resource/box-model/demo/BFC_BFC-contain-float-element-demo.html" target="_blank">解决：BFC</a>
-              </li>
-            </ul>
-          </div>
-            
-        </section>
-
-        <section class="section-content">
-          <h3 style="text-align:left">float与流体布局</h3>
-          <div style="text-align:left">
-            <ul>
-              <li>
-                <a href="./resource/float/demo/float-text-wrapping.html" target="_blank">
-                  文字环绕(不需要float？？？)
-                </a>
-              </li>
-              <li>
-                <a href="./resource/float/demo/float-image-left-text-right.html" target="_blank">
-                  文字环绕变身-单侧固定 (float & flex 混用 ？)
-                </a>
-              </li>
-              <li>
-                <a href="./resource/float/demo/float-text-left-center-right.html" target="_blank">
-                  文字环绕变身-中间内容居中，左中右布局
-                </a>
-              </li>
-            </ul>
-          </div>
+        <section class="html-element-overall">
+          <section class="section-title">
+            <h2>定位Position</h2>
           </section>
-      </section>
-        
-      <section class="flexbox-overall">
-        <section class="section-title">
-            <h2>Flexbox</h2>
+          <section class="section-content">
+            <h3 style="text-align:left">position属性</h4>
+            <div style="text-align:left">
+              <ul>
+                <li>用来指定一个元素在网页上的位置</li>
+                <li>属性值： static | relative | fixed | absolute | sticky</li>
+              </ul>
+            </div>
+            
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">
+              <a href="./resource/position/demo/position-static.html" target="_blank">static</a>
+            </h3>
+            <div style="text-align:left">
+              <ul>
+                <li>position属性的默认值</li>
+                <li>由浏览器决定每个元素的位置</li>
+                <li>符合"正常的页面流"（normal flow）</li>
+                <li>top、bottom、left、right这四个属性无效</li>
+              </ul>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left"> relative | fixed | absolute</h3>
+            <div>
+              <ul>
+                <li>根据参考物来指定偏移的方向和距离</li>
+                <li>必须搭配top、bottom、left、right这四个属性一起使用</li>
+              </ul>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">
+              <a href="./resource/position/demo/position-relative.html" target="_blank">relative</a>
+            </h3>
+            <div style="text-align:left">
+              <ul>
+                <li>偏移参考物：相对于默认位置（即static时的位置）</li>
+              </ul>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">
+              <a href="./resource/position/demo/position-absolute.html" target="_blank">absolute</a>
+            </h3>
+            <div style="text-align:left">
+              <ul>
+                <li>偏移参考物：父元素</li>
+              </ul>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">
+              <a href="./resource/position/demo/position-fixed.html" target="_blank">fixed</a>
+            </h3>
+            <div style="text-align:left">
+              <ul>
+                <li>偏移参考物：浏览器窗口</li>
+              </ul>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">
+              <a href="./resource/position/demo/position-sticky.html" target="_blank">sticky</a>
+            </h3>
+            <div style="text-align:left">
+              <ul>
+                <li>它能够形成"动态固定"的效果</li>
+                <li>必须搭配top、bottom、left、right这四个属性一起使用，不能省略, 否则没有动态效果</li>
+                <li>Safari 浏览器需要加上浏览器前缀-webkit-</li>
+              </ul>
+            </div>
+          </section>
         </section>
-        <section class="section-content">
-            <img loading="lazy" src="./resource/flex/flexbox-overall.svg"
-                  alt="A diagram explaining flexbox terminology.">
+
+        <section class="html-element-overall">
+          <section class="section-title">
+            <h2>浮动float</h2>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">标准流排列</h3>
+            <div style="text-align:left">
+              <p>
+                例如: 
+                <a href="./resource/float/demo/float-div-normal.html" target="_blank">div元素，独占一行</a>
+              </p>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">float</h3>
+            <div style="text-align:left">
+              <ul>
+                <li>属性值： left | right </li>
+                <li>
+                  浮动可以理解为让元素脱离标准流，漂浮在标准流之上，和标准流不是一个层次
+                  <a href="./resource/float/demo/float-div-float-left-demo1.html" target="_blank">Demo1</a>
+                  <a href="./resource/float/demo/float-div-float-left-demo2.html" target="_blank">  | Demo2</a>
+                </li>
+                <li>
+                  <a href="./resource/float/demo/float-div-float-left-vs-right-demo.html" target="_blank">左浮动 vs 右浮动</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">clear</h3>
+            <div style="text-align:left">
+              <ul >
+                <li>清除浮动</li>
+                <li>属性值： none | 
+                  <a href="./resource/float/demo/clear-float-left.html" target="_blank">left</a> |
+                  <a href="./resource/float/demo/clear-float-right.html" target="_blank">right</a>| both </li>
+                </li>
+              </ul>
+            </div>
+            
+          </section>
+          <section class="section-content">
+            <h3 style="text-align:left">float引起的问题</h3>
+            <div style="text-align:left">
+              <p >
+                <a href="./resource/box-model/demo/BFC_nonBFC-nonContain-float-element-demo.html" target="_blank">高度塌陷</a>
+              </p>
+              <ul>
+                <li>
+                  <a href="./resource/box-model/demo/BFC_BFC-contain-float-element-demo.html" target="_blank">解决：BFC</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="section-content">
+            <h3 style="text-align:left">float与流体布局</h3>
+            <div style="text-align:left">
+              <ul>
+                <li>
+                  <a href="./resource/float/demo/float-image-left-text-right.html" target="_blank">
+                    文字-单侧固定 
+                  </a>
+                </li>
+                <li>
+                  <a href="./resource/float/demo/float-text-left-center-right.html" target="_blank">
+                    文字-中间内容居中，左中右布局
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>>
+          
+        <section class="flexbox-overall">
+          <section class="section-title">
+              <h2>Flexbox</h2>
+          </section>
+          <section class="section-content">
+              <img loading="lazy" src="./resource/flex/flexbox-overall.svg"
+                    alt="A diagram explaining flexbox terminology.">
+          </section>
+          <section class="section-content">
+              <img loading="lazy" src="./resource/flex/flexbox-overall-axis.svg"
+                    alt="A diagram explaining flexbox terminology.">
+          </section>
         </section>
-        <section class="section-content">
-            <img loading="lazy" src="./resource/flex/flexbox-overall-axis.svg"
-                  alt="A diagram explaining flexbox terminology.">
+        <section class="flexbox-concept">
+          <section class="section-title">
+            <h2>零星小点</h2>
+          </section>
+          <section class="section-content">
+            <h6>长度单位</h6>
+            <p>px: 一个像素</p>
+            <p>em： 1em=1font-size, 如果em用在的font-size上，则相对于父元素的字号计算</p>
+            <p>rem: 根据root元素计算</p>
+          </section>
         </section>
-      </section>
-      <section class="flexbox-concept">
-        <section class="section-title">
-          <h2>零星小点</h2>
-        </section>
-        <section class="section-content">
-          <h6>长度单位</h6>
-          <p>px: 一个像素</p>
-          <p>em： 1em=1font-size, 如果em用在的font-size上，则相对于父元素的字号计算</p>
-          <p>rem: 根据root元素计算</p>
-        </section>
-      </section>
-      <section class="flexbox-container-attr">
+        <section class="flexbox-container-attr">
           <section class="section-content">
               <h4>父容器上的属性</h4>
           </section>
@@ -347,162 +354,192 @@ flex-direction: row | row-reverse | column | column-reverse;
               <img loading="lazy" src="./resource/flex/flex-direction.svg" alt="A diagram explaining flexbox terminology.">
           </section>
           <section class="section-content">
-          <pre><code class="css">.container{
-flex-wrap: nowrap | wrap | wrap-reverse;
-}
-nowrap: default 不换行
-wrap: 当一行放不下的时候，按照main axis方向自动换行
-wrap-reverse: 当一行放不下的时候，按照与main axis相反的方向自动换行
-          </code></pre>
-              <img loading="lazy" src="./resource/flex/flex-wrap.svg" alt="A diagram explaining flexbox terminology.">
+            <pre>
+              <code class="css">.container{
+  flex-wrap: nowrap | wrap | wrap-reverse;
+  }
+  nowrap: default 不换行
+  wrap: 当一行放不下的时候，按照main axis方向自动换行
+  wrap-reverse: 当一行放不下的时候，按照与main axis相反的方向自动换行
+              </code>
+            </pre>
+            <img loading="lazy" src="./resource/flex/flex-wrap.svg" alt="A diagram explaining flexbox terminology.">
           </section>
           <section class="section-content">
-          <pre><code class="css">.container { justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe; }
-.container { align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe; }
-          </code></pre>
-              <img loading="lazy" src="./resource/flex/justify-content-align-items.svg"
-                    alt="A diagram explaining flexbox terminology.">
+            <pre>
+              <code class="css">.container { justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe; }
+  .container { align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe; }
+              </code>
+            </pre>
+            <img loading="lazy" src="./resource/flex/justify-content-align-items.svg"
+              alt="A diagram explaining flexbox terminology.">
           </section>
           <section class="section-content">
-          <pre><code class="css">.container {
+            <pre><code class="css">.container { flex-flow: flex-direction flex-wrap|initial|inherit; }
+            </code></pre>
+          </section>
+          <section class="section-content">
+            <pre>
+              <code class="css">.container {
 align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
 }
-          </code></pre>
-              <img loading="lazy" src="./resource/flex/align-content.svg" alt="A diagram explaining flexbox terminology.">
+              </code>
+            </pre>
+            <img loading="lazy" src="./resource/flex/align-content.svg" alt="A diagram explaining flexbox terminology.">
           </section>
-      </section>
-      <section class="flexbox-items-attr">
+        </section>
+        <section class="flexbox-items-attr">
           <section class="section-content">
               <h4>item上的属性</h4>
           </section>
           <section class="section-content">
-        <pre><code class="css">.item {
-order: Integer; /* default is 0 */
-}</code></pre>
-              <img loading="lazy" src="./resource/flex/order.svg" alt="A diagram explaining flexbox terminology."/>
+            <pre>
+              <code class="css">.item {
+                order: Integer; /* default is 0 */
+                }
+              </code>
+            </pre>
+            <img loading="lazy" src="./resource/flex/order.svg" alt="A diagram explaining flexbox terminology."/>
           </section>
           <section class="section-content">
-              <h6>flex-basis <i>VS</i> flex-grow <i>VS</i> flex-shrink</h6>
-              <p><strong>flex-basis:</strong>在剩余空间被分配前，元素的尺寸</p>
-              <p><strong>flex-grow:</strong>存在剩余空间时，剩余空间如何被分配</p>
-              <p><strong>flex-shrink:</strong>当空间不够时，如何压缩元素</p>
+            <h6>flex-basis <i>VS</i> flex-grow <i>VS</i> flex-shrink</h6>
+            <p><strong>flex-basis:</strong>在剩余空间被分配前，元素的尺寸</p>
+            <p><strong>flex-grow:</strong>存在剩余空间时，剩余空间如何被分配</p>
+            <p><strong>flex-shrink:</strong>当空间不够时，如何压缩元素</p>
           </section>
           <section class="section-content">
-              <img loading="lazy" src="./resource/flex/extra-space.svg" alt="A diagram explaining flexbox terminology."/>
+            <img loading="lazy" src="./resource/flex/extra-space.svg" alt="A diagram explaining flexbox terminology."/>
           </section>
           <section class="section-content">
-              <h6>flex-basis</h6>
-              <p>auto: 我内容有多大我就占多大剩余空间</p>
-              <p>0: 不管我有多大，你计算剩余空间的时候都不用考虑我的尺寸</p>
+            <h6>flex-basis</h6>
+            <p>auto: 我内容有多大我就占多大剩余空间</p>
+            <p>0: 不管我有多大，你计算剩余空间的时候都不用考虑我的尺寸</p>
           </section>
           <section class="section-content">
-              <h6>question</h6>
-              <p>0 与 auto的结果有什么不一样？</p>
-              <img loading="lazy" src="./resource/flex/flex-basis-question.svg"
-                    alt="A diagram explaining flexbox terminology."/>
+            <h6>question</h6>
+            <p>0 与 auto的结果有什么不一样？</p>
+            <img loading="lazy" src="./resource/flex/flex-basis-question.svg"
+              alt="A diagram explaining flexbox terminology."/>
           </section>
           <section class="section-content">
-              <p>0 VS auto</p>
-              <img loading="lazy" src="./resource/flex/flex-basis-example.svg"
-                    alt="A diagram explaining flexbox terminology."/>
+            <p>0 VS auto</p>
+            <img loading="lazy" src="./resource/flex/flex-basis-example.svg"
+                  alt="A diagram explaining flexbox terminology."/>
           </section>
           <section class="section-content">
-              <p>参考代码</p>
-              <pre><code class="html"><div class="container">
-<div class="item blue">short</div>
-<div class="item green">short</div>
-<div class="item orange">short</div>
-<div class="item pink">loo oooooo oooo ooo oooo oog</div>
-</div></code></pre>
-              <pre><code class="css">.container {
-display: flex;
-height: 120px;
-width: 300px;
-border: solid 1px gray;
-align-items: center;
-}
-.item {
+            <p>参考代码</p>
+            <pre>
+              <code class="html">
+                <div class="container">
+                <div class="item blue">short</div>
+                <div class="item green">short</div>
+                <div class="item orange">short</div>
+                <div class="item pink">loo oooooo oooo ooo oooo oog</div>
+                </div>
+              </code>
+            </pre>
+            <pre>
+              <code class="css">.container {
+                display: flex;
+                height: 120px;
+                width: 300px;
+                border: solid 1px gray;
+                align-items: center;
+                }
+                .item {
 
-height: 50px;
-flex: 1 1;
-flex-basis: auto
-;
-}
-.blue {
-background: blue;
-}
-.green {
-background: green;
-}
-.orange {
-background: orange;
-}
-.pink {
-background: pink;
-}
-</code></pre>
+                height: 50px;
+                flex: 1 1;
+                flex-basis: auto
+                ;
+                }
+                .blue {
+                background: blue;
+                }
+                .green {
+                background: green;
+                }
+                .orange {
+                background: orange;
+                }
+                .pink {
+                background: pink;
+                }
+              </code>
+            </pre>
           </section>
           <section class="section-content">
               <h6>flex-grow</h6>
               <p>默认值为0，不grow</p>
           </section>
-    <section class="section-content">
-      <h6>question</h6>
-      <p>grow 设为1，每个item的宽度是多少呢？</p>
-      <img loading="lazy" src="./resource/flex/flex-grow-question.svg" alt="A diagram explaining flexbox terminology."/>
-    </section>
-    <section class="section-content">
-      <img loading="lazy" src="./resource/flex/flex-grow-anwser.svg" alt="A diagram explaining flexbox terminology."/>
-    </section>
+          <section class="section-content">
+            <h6>question</h6>
+            <p>grow 设为1，每个item的宽度是多少呢？</p>
+            <img loading="lazy" src="./resource/flex/flex-grow-question.svg" alt="A diagram explaining flexbox terminology."/>
+          </section>
+          <section class="section-content">
+            <img loading="lazy" src="./resource/flex/flex-grow-anwser.svg" alt="A diagram explaining flexbox terminology."/>
+          </section>
           <section class="section-content">
               <h6>flex-shrink</h6>
               <p>默认值为1，shrink</p>
           </section>
-    <section class="section-content">
-      <h6>question</h6>
-      <p>每个item的宽度是多少呢？</p>
-      <img loading="lazy" src="./resource/flex/flex-shrink-question.svg" alt="A diagram explaining flexbox terminology."/>
-    </section>
-    <section class="section-content">
-      <img loading="lazy" src="./resource/flex/flex-shrink-answer.svg" alt="A diagram explaining flexbox terminology."/>
-    </section>
           <section class="section-content">
-              <p>Question?</p>
-              <img loading="lazy" src="./resource/flex/question1.svg" alt="A diagram explaining flexbox terminology."/>
+            <h6>question</h6>
+            <p>每个item的宽度是多少呢？</p>
+            <img loading="lazy" src="./resource/flex/flex-shrink-question.svg" alt="A diagram explaining flexbox terminology."/>
           </section>
-    <section class="section-content">
-      <img loading="lazy" src="./resource/flex/answer1.svg" alt="A diagram explaining flexbox terminology."/>
-    </section>
-      </section>
-      </section>
-      <section class="section-content">
-          <img loading="lazy" src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg"
-                alt="A diagram explaining flexbox terminology.">
-      </section>
-      <section class="section-content">
-          <h6>reference</h6>
-          <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox 属性</a></p>
-          <p><a href="https://cssreference.io/property/align-content/">可视化帮助理解呦</a></p>
-          <p><a href="https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/">play game!</a>
-          </p>
-      </section>
-    </div>
-</div>
+          <section class="section-content">
+            <img loading="lazy" src="./resource/flex/flex-shrink-answer.svg" alt="A diagram explaining flexbox terminology."/>
+          </section>
+      
+          <section class="section-content">
+            <img loading="lazy" src="./resource/flex/answer1.svg" alt="A diagram explaining flexbox terminology."/>
+          </section>
 
-<script src="js/reveal.js"></script>
+          <section class="section-content">
+              <img loading="lazy" src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg"
+                    alt="A diagram explaining flexbox terminology.">
+          </section>
+          <section class="section-content">
+            <pre>
+              <code class="css">.item {
+                align-self: auto | flex-start | flex-end | center | baseline | stretch;
+              }
+              </code>
+            </pre>
+          </section>
+          <section class="section-content">
+            <img loading="lazy" src="./resource/flex/align-self.svg" alt="A diagram explaining flexbox terminology."/>
+          </section>
+          <section class="section-content">
+            <p>Note that float, clear and vertical-align have no effect on a flex item.</p>
+          </section>
+          <section class="section-content">
+            <h6>reference</h6>
+            <p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">flexbox 属性</a></p>
+            <p><a href="https://cssreference.io/property/align-content/">可视化帮助理解呦</a></p>
+            <p><a href="https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/">play game!</a></p>
+            <p><a href="./resource/flex/demo/flex-dice-demo.html" target="_blank">🎲骰子Demo</a></p>
+          </section>
+        </section>
+      </div>
+  </div>
 
-<script>
-  // More info about config & dependencies:
-  // - https://github.com/hakimel/reveal.js#configuration
-  // - https://github.com/hakimel/reveal.js#dependencies
-  Reveal.initialize({
-    dependencies: [
-      {src: 'plugin/markdown/marked.js'},
-      {src: 'plugin/markdown/markdown.js'},
-      {src: 'plugin/notes/notes.js', async: true},
-      {src: 'plugin/highlight/highlight.js', async: true}
-    ]
-  });
-</script>
-</body>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          {src: 'plugin/markdown/marked.js'},
+          {src: 'plugin/markdown/markdown.js'},
+          {src: 'plugin/notes/notes.js', async: true},
+          {src: 'plugin/highlight/highlight.js', async: true}
+        ]
+      });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>demo</title>
+		<style>
+			body {
+				background-color: black;
+			}
+
+			.container {
+				display:flex; 
+				flex-direction: column;
+				align-items: flex-start;
+				position: sticky;
+				top: -1px;
+				height: 100%;
+			}
+
+			.row {
+				display: flex; 
+				justify-content: center;
+			}
+
+			.columnHeader {
+				width: 270px;
+				color:white;
+				text-align: center;
+				margin: 30px 0 10px 0;
+			}
+
+			.dice {
+				width: 100px;
+				height: 100px;
+				background: white;
+				display: flex;
+				margin: 10px 80px;
+				padding: 5px;
+				border-radius: 15px;
+				box-shadow: 3px 3px 3px #888888;
+			}
+			
+			.circle {
+				width: 30px;
+				height: 30px;
+				background: blue;
+				border-radius: 15px;
+				text-align: center;
+				color:white;
+				line-height: 30px;
+			}
+		</style>
+		
+	</header>
+	<body>
+		
+		<div class="container">
+
+			<div class="row">
+				<div class="columnHeader">without order for circles</div>
+				<div class="columnHeader">with order for circles</div>
+				<div class="columnHeader">without order for circles</div>
+				<div class="columnHeader">with order for circles</div>
+			</div>
+
+			<div class="row">
+				<div class="dice" style="justify-content: space-between; ">
+					<div class="circle">1</div>
+					<div class="circle">2</div>
+					<div class="circle">3</div>
+				</div>
+				<div class="dice" style="justify-content: space-between; ">
+					<div class="circle" style="order: 3;">1</div>
+					<div class="circle" style="order: 2;">2</div>
+					<div class="circle" style="order: 1;">3</div>
+				</div>
+				<div class="dice" style="flex-direction: column; justify-content: space-between; ">
+					<div class="circle">1</div>
+					<div class="circle">2</div>
+					<div class="circle">3</div>
+				</div>
+				<div class="dice" style="flex-direction: column; justify-content: space-between; ">
+					<div class="circle" style="order: 3;">1</div>
+					<div class="circle" style="order: 2;">2</div>
+					<div class="circle" style="order: 1;">3</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="columnHeader">align-self: flex-end | center | flex-start</div>
+				<div class="columnHeader">align-self: auto | baseline | stretch</div>
+			</div>
+
+			<div class="row">
+				<div class="dice" style="flex-direction: column;">
+					<div class="circle" style="align-self: flex-end;">1</div>
+					<div class="circle" style="align-self: center;">2</div>
+					<div class="circle" style="align-self: flex-start;">3</div>
+				</div>
+
+				<div class="dice" style="flex-direction: column;">
+					<div class="circle" style="align-self: auto;">1</div>
+					<div class="circle" style="align-self: baseline;">2</div>
+					<div class="circle" style="align-self: stretch;">3</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="columnHeader">水平居中</div>
+				<div class="columnHeader">垂直居中</div>
+			</div>
+			<div class="row">
+				
+				<div class="dice" style="align-items: center; justify-content: center;">
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+				
+				<div class="dice" style="flex-direction: column; align-items: center; justify-content: center;">
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+			
+			</div>
+
+			<div class="row">
+					<div class="columnHeader">flex-grow on flex items</div>
+				</div>
+				<div style="width: 350px; height: 100px; display: flex; margin-left: 80px">
+					<div style="background-color:coral; flex-grow: 1;"></div>
+					<div style="background-color:lightblue; flex-grow: 2;"></div>
+					<div style="background-color:khaki; flex-grow: 1;"></div>
+					<div style="background-color:pink; flex-grow: 3;"></div>
+					<div style="background-color:lightgrey; flex-grow: 1;"></div>
+				</div>
+		</div>
+			
+	</body>
+</html>

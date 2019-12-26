@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+	<header>
+		<title>demo</title>
+		<style>
+			body {
+				background-color: black;
+			}
+
+			.container {
+				display:flex; 
+				flex-direction: column;
+				align-items: flex-start;
+				position: sticky;
+				top: -1px;
+				height: 100%;
+			}
+
+			.row {
+				display: flex; 
+				justify-content: center;
+			}
+
+			.columnHeader {
+				width:270px;
+				color:white;
+				text-align: center;
+				margin: 30px 0 10px 0;
+			}
+
+			.dice {
+				width: 90px;
+				height: 90px;
+				background: white;
+				display: flex;
+				margin: 10px 80px;
+				padding: 5px;
+				border-radius: 15px;
+				box-shadow: 3px 3px 3px #888888;
+			}
+
+			.bigDice {
+				width: 120px;
+				height: 120px;
+				background: white;
+				display: flex;
+				margin: 10px 70px;
+				padding: 5px;
+				border-radius: 15px;
+				box-shadow: 3px 3px 3px #888888;
+			}
+
+			.diceRow {
+				flex-basis: 100%;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.circle {
+				width: 30px;
+				height: 30px;
+				background: blue;
+				border-radius: 15px;
+				text-align: center;
+				font-size: 16px;
+				color: white;
+				line-height: 30px;
+			}
+
+			.circleNotShrink {
+				width: 30px;
+				height: 30px;
+				background: blue;
+				border-radius: 15px;
+				text-align: center;
+				font-size: 16px;
+				color: white;
+				line-height: 30px;
+				flex-shrink: 0;
+			}
+
+			.stretch {
+				background: blue;
+				border: 1px solid red;
+				text-align: center;
+				font-size: 16px;
+				color: white;
+			}
+
+			.smallCircle {
+				width: 15px;
+				height: 15px;
+				background: blue;
+				font-size: 12px;
+				border-radius: 15px;
+				text-align: center;
+				color: white;
+			}
+		</style>
+		
+	</header>
+	<body>
+			<div class="container">
+					<div class="row">
+						<div class="columnHeader">justify-content: space-between</div>
+						<div class="columnHeader">justify-content: space-around</div>
+						<div class="columnHeader">justify-content: space-evenly</div>
+					</div>
+					<div class="row">
+						<div class="bigDice" style="justify-content: space-between;">
+							<div class="smallCircle">1</div>
+							<div class="smallCircle">2</div>
+							<div class="smallCircle">3</div>
+						</div>
+		
+						<div class="bigDice" style="justify-content: space-around;">
+							<div class="smallCircle">1</div>
+							<div class="smallCircle">2</div>
+							<div class="smallCircle">3</div>
+						</div>
+		
+						<div class="bigDice" style="justify-content: space-evenly;">
+							<div class="smallCircle">1</div>
+							<div class="smallCircle">2</div>
+							<div class="smallCircle">3</div>
+						</div>
+					</div>
+					<div class="row">
+							<div class="columnHeader">justify-content: space-between</div>
+							<div class="columnHeader">justify-content: space-around</div>
+							<div class="columnHeader">justify-content: space-evenly</div>
+						</div>
+						<div class="row">
+							<div class="bigDice" style="justify-content: space-between; flex-wrap: wrap;">
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+							</div>
+			
+							<div class="bigDice" style="justify-content: space-around;flex-wrap: wrap;">
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+							</div>
+			
+							<div class="bigDice" style="justify-content: space-evenly;flex-wrap: wrap;">
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+								<div class="smallCircle"></div>
+							</div>
+						</div>
+					<div class="row">
+						<div class="columnHeader">justify-content: flex-start | </div>
+						<div class="columnHeader">justify-content: center</div>
+						<div class="columnHeader">justify-content: flex-end</div>
+					</div>
+		
+					<div class="row">
+						<div class="dice" style="justify-content: flex-start;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+		
+						<div class="dice" style="justify-content: center;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+		
+						<div class="dice" style="justify-content: flex-end;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="columnHeader">
+							<p>justify-content: space-between</p>
+							<p>flex-shrink: 0</p>
+						</div>
+						<div class="columnHeader">
+							<p>justify-content: space-around</p>
+							<p>flex-shrink: 0</p>
+						</div>
+						<div class="columnHeader">
+							<p>justify-content: space-evenly</p>
+							<p>flex-shrink: 0</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="dice" style="justify-content: space-between;">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+							<div class="circleNotShrink">6</div>
+						</div>
+		
+						<div class="dice" style="justify-content: space-around;align-items: center;">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+							<div class="circleNotShrink">6</div>
+							<div class="circleNotShrink">7</div>
+							<div class="circleNotShrink">8</div>
+						</div>
+		
+						<div class="dice" style="justify-content: space-evenly;align-items: flex-end">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+							<div class="circleNotShrink">6</div>
+							<div class="circleNotShrink">7</div>
+							<div class="circleNotShrink">8</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="columnHeader">
+							<p>justify-content: flex-start</p>
+							<p>flex-shrink: 0</p>
+						</div>
+						<div class="columnHeader">
+							<p>justify-content: center</p>
+							<p>flex-shrink: 0</p>
+						</div>
+						<div class="columnHeader">
+							<p>justify-content: flex-end</p>
+							<p>flex-shrink: 0</p>
+						</div>
+					</div>
+		
+					<div class="row">
+						<div class="dice" style="justify-content: flex-start; ">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+							<div class="circleNotShrink">6</div>
+						</div>
+		
+						<div class="dice" style="justify-content: center; align-items: center;">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+							<div class="circleNotShrink">6</div>
+							<div class="circleNotShrink">7</div>
+							<div class="circleNotShrink">8</div>
+						</div>
+		
+						<div class="dice" style="justify-content: flex-end; align-items: flex-end;">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+							<div class="circleNotShrink">6</div>
+						</div>
+					</div>
+		
+					<div class="row">
+						<div class="columnHeader">align-items: flex-start</div>
+						<div class="columnHeader">align-items: center</div>
+						<div class="columnHeader">align-items: flex-end</div>
+					</div>
+		
+					<div class="row">
+						<div class="dice" style="align-items: flex-start;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+		
+						<div class="dice" style="align-items: center;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+		
+						<div class="dice" style="align-items: flex-end;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+					</div>
+		
+					<div class="row">
+						<div class="columnHeader">
+							<p>align-items: stretch（默认）</p>
+							<p>限定了width和height</p>
+						</div>
+						<div class="columnHeader">
+							<p>align-items: baseline</p>
+							<p>限定了width和height</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="dice" style="align-items: stretch;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+		
+						<div class="dice" style="align-items: baseline;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="columnHeader">
+							<p>align-items: stretch（默认）</p>
+							<p>不限定width和height</p>
+						</div>
+						<div class="columnHeader">
+							<p>align-items: baseline</p>
+							<p>限定了width和height</p>
+						</div>
+					</div>
+					<div class="row">
+							<div class="dice" style="align-items: stretch;">
+								<div class="stretch">a</div>
+								<div class="stretch">bb</div>
+								<div class="stretch">ccc</div>
+								<div class="stretch">dddd</div>
+							</div>
+			
+							<div class="dice" style="align-items: baseline;">
+								<div class="stretch">a</div>
+								<div class="stretch">bb</div>
+								<div class="stretch">ccc</div>
+								<div class="stretch">dddd</div>
+							</div>
+						</div>
+
+					<div class="row">
+							<div class="columnHeader">flex-direction: row</div>
+							<div class="columnHeader">flex-direction: row-reverse</div>
+							<div class="columnHeader">flex-direction: column</div>
+							<div class="columnHeader">flex-direction: column-reverse</div>
+					</div>
+
+					<div class="row">
+						<div class="dice" style="flex-direction: row;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+						</div>
+						<div class="dice" style="flex-direction: row-reverse;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+						</div>
+		
+						<div class="dice" style="flex-direction: column;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+						</div>
+
+						<div class="dice" style="flex-direction: column-reverse;">
+								<div class="circle">1</div>
+								<div class="circle">2</div>
+								<div class="circle">3</div>
+							</div>
+					</div>
+
+					<div class="row">
+						<div class="columnHeader">flex-wrap: nowrap</div>
+						<div class="columnHeader">flex-wrap: nowrap | flex-shrink: 0
+						</div>
+						<div class="columnHeader">flex-wrap: wrap</div>
+						<div class="columnHeader">flex-wrap: wrap-reverse</div>
+					</div>
+
+					<div class="row">
+						<div class="dice" style="flex-wrap: nowrap;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+							<div class="circle">4</div>
+							<div class="circle">5</div>
+						</div>
+
+						<div class="dice" style="flex-wrap: nowrap;">
+							<div class="circleNotShrink">1</div>
+							<div class="circleNotShrink">2</div>
+							<div class="circleNotShrink">3</div>
+							<div class="circleNotShrink">4</div>
+							<div class="circleNotShrink">5</div>
+						</div>
+
+						<div class="dice" style="flex-wrap: wrap;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+							<div class="circle">4</div>
+							<div class="circle">5</div>
+						</div>
+		
+						<div class="dice" style="flex-wrap: wrap-reverse;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+							<div class="circle">4</div>
+							<div class="circle">5</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="columnHeader">flex-flow: row nowrap</div>
+						<div class="columnHeader">flex-flow: row wrap</div>
+						<div class="columnHeader">flex-flow: column nowrap</div>
+						<div class="columnHeader">flex-flow: column wrap</div>
+					</div>
+
+					<div class="row">
+						<div class="dice" style="flex-flow: row nowrap; flex-shrink: unset;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+							<div class="circle">4</div>
+							<div class="circle">5</div>
+							
+						</div>
+						<div class="dice" style="flex-flow: row wrap;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+							<div class="circle">4</div>
+							<div class="circle">5</div>
+						</div>
+		
+						<div class="dice" style="flex-flow: column nowrap;">
+							<div class="circle">1</div>
+							<div class="circle">2</div>
+							<div class="circle">3</div>
+							<div class="circle">4</div>
+							<div class="circle">5</div>
+						</div>
+
+						<div class="dice" style="flex-flow: column wrap;">
+								<div class="circle">1</div>
+								<div class="circle">2</div>
+								<div class="circle">3</div>
+								<div class="circle">4</div>
+								<div class="circle">5</div>
+							</div>
+					</div>
+					
+					<div class="row">
+						<div class="columnHeader">其他</div>
+					</div>
+					<div class="row">	
+						<div class="dice" style="flex-direction: column; justify-content: space-between">
+							<div class="diceRow">
+								<div class="circle"></div>
+								<div class="circle"></div>
+							</div>
+							<div class="diceRow">
+								<div class="circle"></div>
+								<div class="circle"></div>
+							</div>     
+						</div>
+						
+						<div class="dice" style="flex-wrap: wrap; align-content: space-between;">
+							<div class="row">
+								<div class="circle"></div>
+								<div class="circle"></div>
+							</div>
+							<div class="diceRow">
+								<div class="circle"></div>
+								<div class="circle"></div>
+							</div>  
+						</div>
+
+						<div class="dice" style="flex-wrap: wrap;">
+							<div class="diceRow">
+								<div class="circle"></div>
+								<div class="circle"></div>
+								<div class="circle"></div>
+							</div>
+							<div class="diceRow" style = "justify-content: center;">
+								<div class="circle"></div>
+							</div> 
+								<div class="diceRow" style="flex-basis: 100%;">
+								<div class="circle"></div>
+								<div class="circle"></div>
+							</div> 
+						</div>
+				
+					</div>
+						
+					</div>
+				</div>
+	</body>
+</html>
